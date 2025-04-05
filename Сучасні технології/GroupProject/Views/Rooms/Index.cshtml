@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GroupProject.Models.HotelRoom>
+
+@{
+    ViewData["Title"] = "Список номерів";
+}
+
+<h1>Список номерів</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Номер кімнати</th>
+            <th>Назва</th>
+            <th>Опис</th>
+            <th>Ціна за ніч</th>
+            <th>Місткість</th>
+            <th>Доступність</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in Model)
+        {
+            <tr>
+                <td>@room.RoomNumber</td>
+                <td>@room.Name</td>
+                <td>@room.Description</td>
+                <td>@room.PricePerNight ₴</td>
+                <td>@room.Capacity</td>
+                <td>@(room.IsAvailable ? "Так" : "Ні")</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Book" asp-route-id="@room.Id">Забронювати</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,23 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelBooking.Models
+namespace GroupProject.Models
 {
-    public class ApplicationDbContext : DbContext
+    public class Booking
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+        public int Id { get; set; }
 
-        public DbSet<HotelRoom> HotelRooms { get; set; }
-        public DbSet<Booking> Bookings { get; set; }
+        public int HotelRoomId { get; set; }
+        public HotelRoom HotelRoom { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.HotelRoom)
-                .WithMany(r => r.Bookings)
-                .HasForeignKey(b => b.HotelRoomId);
-        }
+        [Required(ErrorMessage = "Введіть ім'я!")]
+        public string GuestName { get; set; }
+
+        [EmailAddress(ErrorMessage = "Невірний email!")]
+        public string GuestEmail { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime CheckInDate { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime CheckOutDate { get; set; }
     }
 }
