@@ -15,12 +15,32 @@ namespace GroupProject.Controllers
         }
 
         // Вивід списку номерів з демонстраційними даними
-        public async Task<IActionResult> Index(int? pageIndex)
+        public IActionResult Index()
         {
-            int pageSize = 5; // Кількість кімнат на сторінці
-            var rooms = _db.HotelRooms.AsNoTracking(); // Використовуйте ваш DbSet
-            var paginatedRooms = await PaginatedList<HotelRoom>.CreateAsync(rooms, pageIndex ?? 1, pageSize);
-            return View(paginatedRooms);
+            if (!_db.HotelRooms.Any())
+            {
+                _db.HotelRooms.AddRange(new List<HotelRoom>
+                {
+                    new HotelRoom
+                    {
+                        Name = "Номер Люкс",
+                        Description = "Великий номер з видом на місто",
+                        PricePerNight = 1200,
+                        Capacity = 2
+                    },
+                    new HotelRoom
+                    {
+                        Name = "Економ",
+                        Description = "Бюджетний номер без вікна",
+                        PricePerNight = 500,
+                        Capacity = 1
+                    }
+                });
+                _db.SaveChanges();
+            }
+
+            var rooms = _db.HotelRooms.ToList();
+            return View(rooms);
         }
 
         // GET: Rooms/Book/1
