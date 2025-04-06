@@ -13,13 +13,15 @@ namespace GroupProject.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pageIndex)
         {
-            var bookings = await _context.Bookings
+            int pageSize = 5; // Кількість бронювань на сторінці
+            var bookings = _context.Bookings
                 .Include(b => b.HotelRoom)
-                .ToListAsync();
+                .AsNoTracking();
 
-            return View(bookings);
+            var paginatedBookings = await PaginatedList<Booking>.CreateAsync(bookings, pageIndex ?? 1, pageSize);
+            return View(paginatedBookings);
         }
 
         public async Task<IActionResult> Edit(int? id)
