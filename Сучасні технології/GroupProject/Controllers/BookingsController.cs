@@ -36,13 +36,17 @@ namespace GroupProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,GuestName,GuestEmail,CheckInDate,CheckOutDate,HotelRoomId")] Booking booking)
         {
-            if (id != booking.Id) return NotFound();
+            if (id == null) return NotFound();
 
-            if (ModelState.IsValid)
+            try
             {
+                var booking1 = await _context.Bookings.FindAsync(id);
+                booking1.GuestName = booking.GuestName;
+                booking1.GuestEmail = booking.GuestEmail;
+                booking1.CheckInDate = booking.CheckInDate;
+                booking1.CheckOutDate = booking.CheckOutDate;
                 try
                 {
-                    _context.Update(booking);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -51,6 +55,12 @@ namespace GroupProject.Controllers
                     if (!_context.Bookings.Any(e => e.Id == booking.Id)) return NotFound();
                     throw;
                 }
+
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Bookings.Any(e => e.Id == booking.Id)) return NotFound();
+                throw;
             }
 
             booking.HotelRoom = await _context.HotelRooms.FindAsync(booking.HotelRoomId);
