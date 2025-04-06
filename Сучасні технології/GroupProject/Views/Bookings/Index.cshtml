@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GroupProject.Models.Booking>
+
+@{
+    ViewData["Title"] = "Список бронювань";
+}
+
+<h2>Список бронювань</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Гість</th>
+            <th>Email</th>
+            <th>Номер</th>
+            <th>Дата заїзду</th>
+            <th>Дата виїзду</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.GuestName</td>
+                <td>@booking.GuestEmail</td>
+                <td>@booking.HotelRoom?.Name</td>
+                <td>@booking.CheckInDate.ToShortDateString()</td>
+                <td>@booking.CheckOutDate.ToShortDateString()</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@booking.Id">Редагувати</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@booking.Id">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

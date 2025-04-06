@@ -4,12 +4,14 @@
     ViewData["Title"] = "Бронювання номера";
 }
 
-<h1>Бронювання номера: @Model.Room.Name</h1>
+<h1>Бронювання номера: @Model.Room?.Name</h1>
 
 <form asp-action="Book" method="post">
+    @Html.AntiForgeryToken()
+
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <input type="hidden" asp-for="Room.Id" />
+    <input type="hidden" asp-for="HotelRoomId" />
 
     <div class="form-group">
         <label asp-for="GuestName" class="control-label"></label>
@@ -37,3 +39,7 @@
 
     <button type="submit" class="btn btn-primary">Підтвердити бронювання</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

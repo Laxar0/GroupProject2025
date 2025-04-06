@@ -47,6 +47,8 @@ namespace GroupProject.Controllers
         [HttpGet]
         public IActionResult Book(int id)
         {
+            Console.WriteLine($"▶️ GET Rooms/Book/{id}");
+
             var room = _db.HotelRooms.FirstOrDefault(r => r.Id == id);
             if (room == null)
             {
@@ -55,7 +57,8 @@ namespace GroupProject.Controllers
 
             var viewModel = new RoomBookingViewModel
             {
-                Room = room
+                Room = room,
+                HotelRoomId = room.Id
             };
 
             return View(viewModel);
@@ -66,15 +69,28 @@ namespace GroupProject.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Book(RoomBookingViewModel model)
         {
+            Console.WriteLine("▶️ POST Rooms/Book");
+
+            Console.WriteLine($"HotelRoomId: {model.HotelRoomId}");
+            Console.WriteLine($"GuestName: {model.GuestName}");
+            Console.WriteLine($"GuestEmail: {model.GuestEmail}");
+            Console.WriteLine($"CheckIn: {model.CheckInDate}");
+            Console.WriteLine($"CheckOut: {model.CheckOutDate}");
+
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine("❌ Model error: " + error.ErrorMessage);
+            }
+
             if (!ModelState.IsValid)
             {
-                model.Room = _db.HotelRooms.FirstOrDefault(r => r.Id == model.Room.Id);
+                model.Room = _db.HotelRooms.FirstOrDefault(r => r.Id == model.HotelRoomId);
                 return View(model);
             }
 
             var booking = new Booking
             {
-                HotelRoomId = model.Room.Id,
+                HotelRoomId = model.HotelRoomId,
                 GuestName = model.GuestName,
                 GuestEmail = model.GuestEmail,
                 CheckInDate = model.CheckInDate,
@@ -82,7 +98,9 @@ namespace GroupProject.Controllers
             };
 
             _db.Bookings.Add(booking);
-            _db.SaveChanges();
+            var saved = _db.SaveChanges();
+
+            Console.WriteLine($"✅ Збережено записів у базу: {saved}");
 
             return RedirectToAction(nameof(Index));
         }

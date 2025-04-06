@@ -1,0 +1,20 @@
+﻿@model GroupProject.Models.Booking
+
+@{
+    ViewData["Title"] = "Видалення бронювання";
+}
+
+<h1>Видалити бронювання?</h1>
+
+<div>
+    <h4>@Model.GuestName — @Model.HotelRoom?.Name</h4>
+    <p>Email: @Model.GuestEmail</p>
+    <p>З: @Model.CheckInDate.ToShortDateString() — До: @Model.CheckOutDate.ToShortDateString()</p>
+
+    @using (Html.BeginForm("Delete", "Bookings", new { id = Model.Id }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">Видалити</button>
+        <a asp-action="Index" class="btn btn-secondary">Скасувати</a>
+    }
+</div>

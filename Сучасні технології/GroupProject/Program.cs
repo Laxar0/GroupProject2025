@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // 💾 Реєструємо ApplicationDbContext з тимчасовою InMemory базою
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseInMemoryDatabase("HotelDb"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

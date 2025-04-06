@@ -1,0 +1,312 @@
+Folder PATH listing
+Volume serial number is 0CC0-5163
+C:.
+³   tree
+³   
+ÃÄÄÄ.github
+³   ÀÄÄÄworkflows
+ÀÄÄÄ??????? ??????????
+    ÀÄÄÄGroupProject
+        ³   .gitignore
+        ³   appsettings.Development.json
+        ³   appsettings.json
+        ³   GroupProject.csproj
+        ³   GroupProject.csproj.user
+        ³   GroupProject.sln
+        ³   Program.cs
+        ³   
+        ÃÄÄÄ.vs
+        ³   ÃÄÄÄGroupProject
+        ³   ³   ³   project-colors.json
+        ³   ³   ³   
+        ³   ³   ÃÄÄÄconfig
+        ³   ³   ³       applicationhost.config
+        ³   ³   ³       
+        ³   ³   ÃÄÄÄDesignTimeBuild
+        ³   ³   ³       .dtbcache.v2
+        ³   ³   ³       
+        ³   ³   ÃÄÄÄFileContentIndex
+        ³   ³   ³       15610480-d90d-4d29-a306-aa771fac6743.vsidx
+        ³   ³   ³       255a63ba-c9b0-4b3e-8858-e9ab7e9728cd.vsidx
+        ³   ³   ³       340d1f5f-4b6f-4a6f-bd4c-8a344b5c6bef.vsidx
+        ³   ³   ³       56280897-4c98-4954-a631-b34495781d8f.vsidx
+        ³   ³   ³       d743bfa5-9b7b-4e7e-b5af-67a1a03489a0.vsidx
+        ³   ³   ³       
+        ³   ³   ÀÄÄÄv17
+        ³   ³           .futdcache.v1
+        ³   ³           .futdcache.v2
+        ³   ³           .wsuo
+        ³   ³           DocumentLayout.json
+        ³   ³           HierarchyCache.v1.txt
+        ³   ³           
+        ³   ÃÄÄÄProjectEvaluation
+        ³   ³       groupproject.metadata.v7.bin
+        ³   ³       groupproject.projects.v7.bin
+        ³   ³       
+        ³   ÀÄÄÄsd
+        ÃÄÄÄbin
+        ³   ÀÄÄÄDebug
+        ³       ÀÄÄÄnet6.0
+        ³           ³   appsettings.Development.json
+        ³           ³   appsettings.json
+        ³           ³   GroupProject.deps.json
+        ³           ³   GroupProject.dll
+        ³           ³   GroupProject.exe
+        ³           ³   GroupProject.pdb
+        ³           ³   GroupProject.runtimeconfig.json
+        ³           ³   GroupProject.staticwebassets.runtime.json
+        ³           ³   Humanizer.dll
+        ³           ³   Microsoft.Data.SqlClient.dll
+        ³           ³   Microsoft.EntityFrameworkCore.Abstractions.dll
+        ³           ³   Microsoft.EntityFrameworkCore.Design.dll
+        ³           ³   Microsoft.EntityFrameworkCore.dll
+        ³           ³   Microsoft.EntityFrameworkCore.InMemory.dll
+        ³           ³   Microsoft.EntityFrameworkCore.Relational.dll
+        ³           ³   Microsoft.EntityFrameworkCore.SqlServer.dll
+        ³           ³   Microsoft.Extensions.Caching.Memory.dll
+        ³           ³   Microsoft.Extensions.DependencyInjection.dll
+        ³           ³   Microsoft.Identity.Client.dll
+        ³           ³   Microsoft.IdentityModel.JsonWebTokens.dll
+        ³           ³   Microsoft.IdentityModel.Logging.dll
+        ³           ³   Microsoft.IdentityModel.Protocols.dll
+        ³           ³   Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+        ³           ³   Microsoft.IdentityModel.Tokens.dll
+        ³           ³   Microsoft.Win32.SystemEvents.dll
+        ³           ³   System.Configuration.ConfigurationManager.dll
+        ³           ³   System.Diagnostics.DiagnosticSource.dll
+        ³           ³   System.Drawing.Common.dll
+        ³           ³   System.IdentityModel.Tokens.Jwt.dll
+        ³           ³   System.Runtime.Caching.dll
+        ³           ³   System.Security.Cryptography.ProtectedData.dll
+        ³           ³   System.Security.Permissions.dll
+        ³           ³   System.Windows.Extensions.dll
+        ³           ³   
+        ³           ÀÄÄÄruntimes
+        ³               ÃÄÄÄunix
+        ³               ³   ÀÄÄÄlib
+        ³               ³       ÃÄÄÄnetcoreapp3.0
+        ³               ³       ³       System.Drawing.Common.dll
+        ³               ³       ³       
+        ³               ³       ÀÄÄÄnetcoreapp3.1
+        ³               ³               Microsoft.Data.SqlClient.dll
+        ³               ³               
+        ³               ÃÄÄÄwin
+        ³               ³   ÀÄÄÄlib
+        ³               ³       ÃÄÄÄnetcoreapp3.0
+        ³               ³       ³       Microsoft.Win32.SystemEvents.dll
+        ³               ³       ³       System.Drawing.Common.dll
+        ³               ³       ³       System.Windows.Extensions.dll
+        ³               ³       ³       
+        ³               ³       ÃÄÄÄnetcoreapp3.1
+        ³               ³       ³       Microsoft.Data.SqlClient.dll
+        ³               ³       ³       
+        ³               ³       ÀÄÄÄnetstandard2.0
+        ³               ³               System.Runtime.Caching.dll
+        ³               ³               System.Security.Cryptography.ProtectedData.dll
+        ³               ³               
+        ³               ÃÄÄÄwin-arm
+        ³               ³   ÀÄÄÄnative
+        ³               ³           Microsoft.Data.SqlClient.SNI.dll
+        ³               ³           
+        ³               ÃÄÄÄwin-arm64
+        ³               ³   ÀÄÄÄnative
+        ³               ³           Microsoft.Data.SqlClient.SNI.dll
+        ³               ³           
+        ³               ÃÄÄÄwin-x64
+        ³               ³   ÀÄÄÄnative
+        ³               ³           Microsoft.Data.SqlClient.SNI.dll
+        ³               ³           
+        ³               ÀÄÄÄwin-x86
+        ³                   ÀÄÄÄnative
+        ³                           Microsoft.Data.SqlClient.SNI.dll
+        ³                           
+        ÃÄÄÄControllers
+        ³       BookingsController.cs
+        ³       HomeController.cs
+        ³       RoomsController.cs
+        ³       
+        ÃÄÄÄMigrations
+        ³       20250406183903_InitialCreate.cs
+        ³       20250406183903_InitialCreate.Designer.cs
+        ³       ApplicationDbContextModelSnapshot.cs
+        ³       
+        ÃÄÄÄModels
+        ³       ApplicationDbContext.cs
+        ³       Booking.cs
+        ³       ErrorViewModel.cs
+        ³       HotelRoom.cs
+        ³       
+        ÃÄÄÄobj
+        ³   ³   GroupProject.csproj.nuget.dgspec.json
+        ³   ³   GroupProject.csproj.nuget.g.props
+        ³   ³   GroupProject.csproj.nuget.g.targets
+        ³   ³   project.assets.json
+        ³   ³   project.nuget.cache
+        ³   ³   
+        ³   ÀÄÄÄDebug
+        ³       ÀÄÄÄnet6.0
+        ³           ³   .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+        ³           ³   apphost.exe
+        ³           ³   GroupPro.DC9F1969.Up2Date
+        ³           ³   GroupProject.AssemblyInfo.cs
+        ³           ³   GroupProject.AssemblyInfoInputs.cache
+        ³           ³   GroupProject.assets.cache
+        ³           ³   GroupProject.csproj.AssemblyReference.cache
+        ³           ³   GroupProject.csproj.BuildWithSkipAnalyzers
+        ³           ³   GroupProject.csproj.CoreCompileInputs.cache
+        ³           ³   GroupProject.csproj.FileListAbsolute.txt
+        ³           ³   GroupProject.dll
+        ³           ³   GroupProject.GeneratedMSBuildEditorConfig.editorconfig
+        ³           ³   GroupProject.genruntimeconfig.cache
+        ³           ³   GroupProject.GlobalUsings.g.cs
+        ³           ³   GroupProject.MvcApplicationPartsAssemblyInfo.cache
+        ³           ³   GroupProject.pdb
+        ³           ³   GroupProject.RazorAssemblyInfo.cache
+        ³           ³   GroupProject.RazorAssemblyInfo.cs
+        ³           ³   GroupProject.sourcelink.json
+        ³           ³   project.razor.vs.bin
+        ³           ³   staticwebassets.build.json
+        ³           ³   staticwebassets.development.json
+        ³           ³   staticwebassets.pack.json
+        ³           ³   
+        ³           ÃÄÄÄref
+        ³           ³       GroupProject.dll
+        ³           ³       
+        ³           ÃÄÄÄrefint
+        ³           ³       GroupProject.dll
+        ³           ³       
+        ³           ÃÄÄÄscopedcss
+        ³           ³   ÃÄÄÄbundle
+        ³           ³   ³       GroupProject.styles.css
+        ³           ³   ³       
+        ³           ³   ÃÄÄÄprojectbundle
+        ³           ³   ³       GroupProject.bundle.scp.css
+        ³           ³   ³       
+        ³           ³   ÀÄÄÄViews
+        ³           ³       ÀÄÄÄShared
+        ³           ³               _Layout.cshtml.rz.scp.css
+        ³           ³               
+        ³           ÀÄÄÄstaticwebassets
+        ³                   msbuild.build.GroupProject.props
+        ³                   msbuild.buildMultiTargeting.GroupProject.props
+        ³                   msbuild.buildTransitive.GroupProject.props
+        ³                   msbuild.GroupProject.Microsoft.AspNetCore.StaticWebAssets.props
+        ³                   
+        ÃÄÄÄProperties
+        ³       launchSettings.json
+        ³       
+        ÃÄÄÄViewModels
+        ³       RoomBookingViewModel.cs
+        ³       
+        ÃÄÄÄViews
+        ³   ³   _ViewImports.cshtml
+        ³   ³   _ViewStart.cshtml
+        ³   ³   
+        ³   ÃÄÄÄBookings
+        ³   ³       Delete.cshtml
+        ³   ³       Delete.cshtml.cs
+        ³   ³       Edit.cshtml
+        ³   ³       Edit.cshtml.cs
+        ³   ³       Index.cshtml
+        ³   ³       Index.cshtml.cs
+        ³   ³       
+        ³   ÃÄÄÄHome
+        ³   ³       Index.cshtml
+        ³   ³       Privacy.cshtml
+        ³   ³       
+        ³   ÃÄÄÄRooms
+        ³   ³       Book.cshtml
+        ³   ³       Book.cshtml.cs
+        ³   ³       Index.cshtml
+        ³   ³       Index.cshtml.cs
+        ³   ³       
+        ³   ÀÄÄÄShared
+        ³           Error.cshtml
+        ³           _Layout.cshtml
+        ³           _Layout.cshtml.css
+        ³           _ValidationScriptsPartial.cshtml
+        ³           
+        ÀÄÄÄwwwroot
+            ³   favicon.ico
+            ³   
+            ÃÄÄÄcss
+            ³       site.css
+            ³       
+            ÃÄÄÄjs
+            ³       site.js
+            ³       
+            ÀÄÄÄlib
+                ÃÄÄÄbootstrap
+                ³   ³   LICENSE
+                ³   ³   
+                ³   ÀÄÄÄdist
+                ³       ÃÄÄÄcss
+                ³       ³       bootstrap-grid.css
+                ³       ³       bootstrap-grid.css.map
+                ³       ³       bootstrap-grid.min.css
+                ³       ³       bootstrap-grid.min.css.map
+                ³       ³       bootstrap-grid.rtl.css
+                ³       ³       bootstrap-grid.rtl.css.map
+                ³       ³       bootstrap-grid.rtl.min.css
+                ³       ³       bootstrap-grid.rtl.min.css.map
+                ³       ³       bootstrap-reboot.css
+                ³       ³       bootstrap-reboot.css.map
+                ³       ³       bootstrap-reboot.min.css
+                ³       ³       bootstrap-reboot.min.css.map
+                ³       ³       bootstrap-reboot.rtl.css
+                ³       ³       bootstrap-reboot.rtl.css.map
+                ³       ³       bootstrap-reboot.rtl.min.css
+                ³       ³       bootstrap-reboot.rtl.min.css.map
+                ³       ³       bootstrap-utilities.css
+                ³       ³       bootstrap-utilities.css.map
+                ³       ³       bootstrap-utilities.min.css
+                ³       ³       bootstrap-utilities.min.css.map
+                ³       ³       bootstrap-utilities.rtl.css
+                ³       ³       bootstrap-utilities.rtl.css.map
+                ³       ³       bootstrap-utilities.rtl.min.css
+                ³       ³       bootstrap-utilities.rtl.min.css.map
+                ³       ³       bootstrap.css
+                ³       ³       bootstrap.css.map
+                ³       ³       bootstrap.min.css
+                ³       ³       bootstrap.min.css.map
+                ³       ³       bootstrap.rtl.css
+                ³       ³       bootstrap.rtl.css.map
+                ³       ³       bootstrap.rtl.min.css
+                ³       ³       bootstrap.rtl.min.css.map
+                ³       ³       
+                ³       ÀÄÄÄjs
+                ³               bootstrap.bundle.js
+                ³               bootstrap.bundle.js.map
+                ³               bootstrap.bundle.min.js
+                ³               bootstrap.bundle.min.js.map
+                ³               bootstrap.esm.js
+                ³               bootstrap.esm.js.map
+                ³               bootstrap.esm.min.js
+                ³               bootstrap.esm.min.js.map
+                ³               bootstrap.js
+                ³               bootstrap.js.map
+                ³               bootstrap.min.js
+                ³               bootstrap.min.js.map
+                ³               
+                ÃÄÄÄjquery
+                ³   ³   LICENSE.txt
+                ³   ³   
+                ³   ÀÄÄÄdist
+                ³           jquery.js
+                ³           jquery.min.js
+                ³           jquery.min.map
+                ³           
+                ÃÄÄÄjquery-validation
+                ³   ³   LICENSE.md
+                ³   ³   
+                ³   ÀÄÄÄdist
+                ³           additional-methods.js
+                ³           additional-methods.min.js
+                ³           jquery.validate.js
+                ³           jquery.validate.min.js
+                ³           
+                ÀÄÄÄjquery-validation-unobtrusive
+                        jquery.validate.unobtrusive.js
+                        jquery.validate.unobtrusive.min.js
+                        LICENSE.txt
+                        
