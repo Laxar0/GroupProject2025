@@ -1,5 +1,4 @@
-﻿@model IEnumerable<GroupProject.Models.HotelRoom>
-
+﻿@model PaginatedList<GroupProject.Models.HotelRoom>
 @{
     ViewData["Title"] = "Список номерів";
 }
@@ -35,3 +34,35 @@
         }
     </tbody>
 </table>
+
+<div class="pagination mt-3">
+    @if (Model.HasPreviousPage)
+    {
+        <a asp-action="Index" 
+           asp-route-pageIndex="@(Model.PageIndex - 1)"
+           class="btn btn-outline-primary">
+            &laquo; Попередня
+        </a>
+    }
+    
+    <span class="mx-2 align-self-center">
+        Сторінка @Model.PageIndex з @Model.TotalPages
+    </span>
+    
+    @if (Model.HasNextPage)
+    {
+        <a asp-action="Index" 
+           asp-route-pageIndex="@(Model.PageIndex + 1)"
+           class="btn btn-outline-primary">
+            Наступна &raquo;
+        </a>
+    }
+</div>
+
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
