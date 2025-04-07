@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GroupProject.Models;
 
@@ -7,16 +8,32 @@ namespace GroupProject.Controllers
     public class BookingsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public BookingsController(ApplicationDbContext context)
+        public BookingsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+
+            // Якщо користувач адміністратор — повернути всі бронювання
+            if (await _userManager.IsInRoleAsync(user, "Admin"))
+            {
+                var allBookings = await _context.Bookings
+                    .Include(b => b.HotelRoom)
+                    .ToListAsync();
+                return View(allBookings);
+            }
+
+            // Інакше — тільки власні бронювання
             var bookings = await _context.Bookings
                 .Include(b => b.HotelRoom)
+                .Where(b => b.UserId == user.Id)
                 .ToListAsync();
 
             return View(bookings);
@@ -36,35 +53,16 @@ namespace GroupProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,GuestName,GuestEmail,CheckInDate,CheckOutDate,HotelRoomId")] Booking booking)
         {
-            if (id == null) return NotFound();
+            var bookingDb = await _context.Bookings.FindAsync(id);
+            if (bookingDb == null) return NotFound();
 
-            try
-            {
-                var booking1 = await _context.Bookings.FindAsync(id);
-                booking1.GuestName = booking.GuestName;
-                booking1.GuestEmail = booking.GuestEmail;
-                booking1.CheckInDate = booking.CheckInDate;
-                booking1.CheckOutDate = booking.CheckOutDate;
-                try
-                {
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Bookings.Any(e => e.Id == booking.Id)) return NotFound();
-                    throw;
-                }
+            bookingDb.GuestName = booking.GuestName;
+            bookingDb.GuestEmail = booking.GuestEmail;
+            bookingDb.CheckInDate = booking.CheckInDate;
+            bookingDb.CheckOutDate = booking.CheckOutDate;
 
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.Bookings.Any(e => e.Id == booking.Id)) return NotFound();
-                throw;
-            }
-
-            booking.HotelRoom = await _context.HotelRooms.FindAsync(booking.HotelRoomId);
-            return View(booking);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int? id)

@@ -4,6 +4,5 @@ namespace GroupProject.Models
 {
     public class ApplicationUser : IdentityUser
     {
-       
     }
 }

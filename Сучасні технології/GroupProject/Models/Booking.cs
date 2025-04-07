@@ -20,5 +20,8 @@ namespace GroupProject.Models
 
         [DataType(DataType.Date)]
         public DateTime CheckOutDate { get; set; }
+
+        public string? UserId { get; set; }
+        public ApplicationUser? User { get; set; }
     }
 }
