@@ -17,9 +17,29 @@ namespace GroupProject.Controllers
             _userManager = userManager;
         }
 
+<<<<<<< Updated upstream
         public async Task<IActionResult> Index(int? pageIndex)
         {
             const int pageSize = 5; // Кількість кімнат на сторінці
+=======
+<<<<<<< HEAD
+        public async Task<IActionResult> Index(int? pageIndex)
+        {
+            const int pageSize = 5; // Кількість кімнат на сторінці
+=======
+        public IActionResult Index()
+        {
+            if (!_db.HotelRooms.Any())
+            {
+                _db.HotelRooms.AddRange(new List<HotelRoom>
+                {
+                    new HotelRoom { Name = "Номер Люкс", Description = "Великий номер з видом на місто", PricePerNight = 1200, Capacity = 2 },
+                    new HotelRoom { Name = "Економ", Description = "Бюджетний номер без вікна", PricePerNight = 500, Capacity = 1 }
+                });
+                _db.SaveChanges();
+            }
+>>>>>>> 1fe4b4eba183c332773b028d119fc51f39dced1e
+>>>>>>> Stashed changes
 
             // Отримуємо всі номери з бази даних
             var roomsQuery = _db.HotelRooms

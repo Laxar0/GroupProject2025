@@ -18,9 +18,35 @@ namespace GroupProject.Controllers
 
         public async Task<IActionResult> Index(int? pageIndex)
         {
+<<<<<<< Updated upstream
             const int pageSize = 10; // Кількість елементів на сторінці
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return Challenge();
+=======
+<<<<<<< HEAD
+            const int pageSize = 10; // Кількість елементів на сторінці
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+=======
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+
+            // Якщо користувач адміністратор — повернути всі бронювання
+            if (await _userManager.IsInRoleAsync(user, "Admin"))
+            {
+                var allBookings = await _context.Bookings
+                    .Include(b => b.HotelRoom)
+                    .ToListAsync();
+                return View(allBookings);
+            }
+
+            // Інакше — тільки власні бронювання
+            var bookings = await _context.Bookings
+                .Include(b => b.HotelRoom)
+                .Where(b => b.UserId == user.Id)
+                .ToListAsync();
+>>>>>>> 1fe4b4eba183c332773b028d119fc51f39dced1e
+>>>>>>> Stashed changes
 
             IQueryable<Booking> bookingsQuery = _context.Bookings.Include(b => b.HotelRoom);
 
